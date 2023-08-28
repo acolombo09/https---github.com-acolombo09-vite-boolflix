@@ -1,21 +1,24 @@
 <script>
+import SearchBar from "./SearchBar.vue";
+
 export default {
-  data() {
-    return {
-      
-    };
-  },
+  components: { SearchBar } 
+
 };
+
 </script>
 
 <template>
   <header class="bg-black py-3">
     <div class="container-fluid">
       <div class="row">
-        <div class="col d-flex justify-content-center align-items-center mx-auto">
-          <ul class="nav nav-pills">
+        <div class="col mx-auto">
+          <ul class="nav nav-pills d-flex justify-content-between align-items-center">
             <li class="nav-item">
-              <h2 class="text-white">INIZIA DA QUI A CREARE LA BARRA DI RICERCA</h2>
+              <h3 class="text-danger">BOOLFLIX</h3>
+            </li>
+            <li class="nav-item">
+              <SearchBar></SearchBar>
             </li>
           </ul>
         </div>

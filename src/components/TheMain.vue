@@ -1,7 +1,10 @@
 <script>
-// import comicsList from "../db/comics";
+import AppCard from "./AppCard.vue";
 
 export default {
+  components: {
+    AppCard,
+  },
   data() {
     return {
       
