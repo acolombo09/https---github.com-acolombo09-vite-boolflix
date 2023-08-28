@@ -1,10 +1,10 @@
 <script>
-
+// import resultsList from "../store";
 
 export default {
   data() {
     return {
-      
+      // resultsList
     };
   },
   methods:{
@@ -14,7 +14,26 @@ export default {
 </script>
 
 <template>
-  
+  <div class="col d-flex justify-content-center">
+    <div class="card border-0 rounded-0 bg-transparent">
+      <img src="../assets/vue.svg" style="height: 50px;" class="card-img-top rounded-0" alt="">
+      <div class="card-body px-0">
+        <h5 class="text-white">
+          TITOLO
+        </h5>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col" v-for="(result, i) in resultsList" v-bind:key="`result_${i}`">
+    <div class="card border-0 rounded-0 bg-transparent">
+      <img v-bind:src="result.poster_path" class="card-img-top rounded-0" alt="">
+      <div class="card-body px-0">
+        <h5 class="text-white">
+          {{ result.title }}
+        </h5>
+      </div>
+    </div>
+  </div> -->
 </template>
 
 <style lang="scss" scoped>

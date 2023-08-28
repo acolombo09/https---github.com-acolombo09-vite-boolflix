@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 import AppCard from "./AppCard.vue";
 
 export default {
@@ -7,24 +8,30 @@ export default {
   },
   data() {
     return {
-      
+      foundedFilms: []
     };
   },
+  methods: {
+    fetchFilms(){
+      const url = 'https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1';
+
+      axios.get(url).then((response) => {
+        // una volta recuperati i dati dal server, li salvo nel data
+        this.foundedFilms = response.data.results;
+      });
+    },
+  },
+  mounted() {
+    this.fetchFilms();
+  }
 };
 </script>
 
 <template>
   <main class="bg-dark py-3">
     <div class="container-fluid">
-      <div class="row">
-        <div class="col d-flex justify-content-center align-items-center mx-auto">
-          <div class="card border-0 rounded-0 bg-transparent">
-            <img class="card-img-top rounded-0" alt="">
-            <div class="card-body">
-              <h2 class="text-white">INIZIA DA QUI A CREARE LA LISTA DI FILM CARDS</h2>
-            </div>
-          </div>
-        </div>
+      <div class="row row-cols-6 mx-auto">
+        <AppCard></AppCard>
       </div>
     </div>
   </main>
