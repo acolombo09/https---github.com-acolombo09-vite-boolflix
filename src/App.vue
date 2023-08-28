@@ -19,7 +19,7 @@ export default {
 
 <template>
   
-  <div class="container">
+  <div class="container-fluid">
     <TheHeader></TheHeader>
     <TheMain></TheMain>
   </div>
