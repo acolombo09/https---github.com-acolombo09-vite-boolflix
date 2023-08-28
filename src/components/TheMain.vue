@@ -31,11 +31,12 @@ export default {
   <main class="bg-dark py-3">
     <div class="container-fluid">
       <div class="row row-cols-6 mx-auto">
-        <AppCard></AppCard>
+        <div class="col d-flex justify-content-center">
+          <AppCard></AppCard>
+        </div>
       </div>
     </div>
   </main>
-  
 </template>
 
 <style lang="scss" scoped>

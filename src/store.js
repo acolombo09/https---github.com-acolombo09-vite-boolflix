@@ -1,5 +1,5 @@
-import { reactive } from "vue";
 import axios from "axios";
+import { reactive } from "vue";
 
 // Qui scriverò tutte le variabili che voglio rendere globali 
 // per tutti i components, potrò leggerle e modificarle
