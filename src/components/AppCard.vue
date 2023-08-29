@@ -17,6 +17,7 @@ export default {
 </script>
 
 <template>
+  <div class="col-3 d-flex justify-content-center">
     <div class="card border-0 rounded-0 bg-transparent">
       <img src="../assets/vue.svg" style="height: 50px;" class="card-img-top rounded-0" alt="">
       <div class="card-body px-0 text-center">
@@ -26,6 +27,7 @@ export default {
         <h6 class="text-white">Voti: {{movieData.vote_count}}</h6>
       </div>
     </div>
+  </div>
     <!-- v-for da inserire in themain.vue -->
   <!-- <div class="col" v-for="(result, i) in resultsList" v-bind:key="`result_${i}`">
     <div class="card border-0 rounded-0 bg-transparent">

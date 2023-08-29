@@ -29,6 +29,7 @@ export default {
       .then((response) => {
         // una volta recuperati i dati dal server, li salvo nel data
         this.searchResults = response.data.results;
+        console.log(this.searchResults);
       })
         .catch(error => {
           console.error(error);
@@ -62,9 +63,9 @@ export default {
         </div>
       </div>
       <div class="row row-cols-4 mx-auto py-3">
-        <div class="col-6 d-flex justify-content-center">
-          <AppCard v-for="movie in searchResults" v-bind:key="movie.id" v-bind:movieData="movie"></AppCard>
-        </div>
+        
+        <AppCard v-for="movie in searchResults" v-bind:key="movie.id" v-bind:movieData="movie"></AppCard>
+
       </div>
       <!-- Sezione ricerca serie TV -->
       <!-- <div class="row searchbar">
