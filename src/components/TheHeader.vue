@@ -35,7 +35,7 @@ export default {
 @use "../styles/partials/variables" as *;
 
 header{
-  min-height: 90px;
+  min-height: 75px;
   // background-color: $color-secondary;
 
   // img {

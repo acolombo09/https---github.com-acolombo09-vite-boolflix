@@ -33,15 +33,19 @@ export default {
 </script>
 
 <template>
-  <main class="bg-dark py-3">
+  <main class="bg-dark">
     <div class="container-fluid">
+      <!-- Sezione ricerca films -->
       <div class="row searchbar">
-        <div class="col mx-auto">
+        <div class="col mx-auto py-3">
           <ul class="nav nav-pills d-flex justify-content-between align-items-center">
+            <li class="nav-item">
+              <h4 class="text-white">MOVIES</h4>
+            </li>
             <li class="nav-item">
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Ricerca" v-model="store.searchText"/>
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                <button class="btn btn-outline-light" type="button" id="button-addon2"
                 @click="performSearch">
                   Cerca
                 </button>
@@ -50,11 +54,35 @@ export default {
           </ul>
         </div>
       </div>
-      <div class="row row-cols-6 mx-auto">
+      <div class="row row-cols-6 mx-auto py-3">
         <div class="col d-flex justify-content-center">
           <AppCard></AppCard>
         </div>
       </div>
+      <!-- Sezione ricerca serie TV -->
+      <!-- <div class="row searchbar">
+        <div class="col mx-auto py-3">
+          <ul class="nav nav-pills d-flex justify-content-between align-items-center">
+            <li class="nav-item">
+              <h4 class="text-white">MOVIES</h4>
+            </li>
+            <li class="nav-item">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Ricerca" v-model="store.searchText"/>
+                <button class="btn btn-outline-light" type="button" id="button-addon2"
+                @click="performSearch">
+                  Cerca
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row row-cols-6 mx-auto py-3">
+        <div class="col d-flex justify-content-center">
+          <AppCard></AppCard>
+        </div>
+      </div> -->
     </div>
   </main>
 </template>
@@ -71,7 +99,7 @@ main{
   //   aspect-ratio: 1/1;
   // }
   .searchbar{
-    min-height: 90px;
+    min-height: 75px;
   }
 }
 
