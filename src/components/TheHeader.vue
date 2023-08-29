@@ -1,9 +1,17 @@
 <script>
-import SearchBar from "./SearchBar.vue";
+// importo solo la variabile store, per questo l'ho messo fuori dal default
+import { store, performSearch } from "../store";
 
+// searchText lo inserisco direttamente nello store.js
 export default {
-  components: { SearchBar } 
-
+  data() {
+    return {
+      store,
+    };
+  },
+  methods:{
+    performSearch
+  },
 };
 
 </script>
@@ -18,7 +26,13 @@ export default {
               <h3 class="text-danger">BOOLFLIX</h3>
             </li>
             <li class="nav-item">
-              <SearchBar></SearchBar>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Ricerca" v-model="store.searchText"/>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
+                @click="performSearch">
+                  Cerca
+                </button>
+              </div>
             </li>
           </ul>
         </div>
