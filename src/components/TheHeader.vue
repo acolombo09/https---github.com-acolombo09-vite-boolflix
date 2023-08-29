@@ -1,8 +1,6 @@
 <script>
-// importo solo la variabile store, per questo l'ho messo fuori dal default
 import { store, performSearch } from "../store";
 
-// searchText lo inserisco direttamente nello store.js
 export default {
   data() {
     return {
@@ -10,7 +8,7 @@ export default {
     };
   },
   methods:{
-    performSearch
+    
   },
 };
 
@@ -19,20 +17,11 @@ export default {
 <template>
   <header class="bg-black py-3">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row searchbar">
         <div class="col mx-auto">
           <ul class="nav nav-pills d-flex justify-content-between align-items-center">
             <li class="nav-item">
               <h3 class="text-danger">BOOLFLIX</h3>
-            </li>
-            <li class="nav-item">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Ricerca" v-model="store.searchText"/>
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2"
-                @click="performSearch">
-                  Cerca
-                </button>
-              </div>
             </li>
           </ul>
         </div>
