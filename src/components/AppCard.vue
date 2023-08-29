@@ -2,9 +2,10 @@
 // import resultsList from "../store";
 
 export default {
-  // props: {
-  //   // creare la prop per ricevere i film trovati e stamparli in html nella card
-  // },
+  props: {
+// creare la prop per ricevere i film trovati e stamparli in html nella card
+  movieData: Object
+  },
   data() {
     return {
     };
@@ -19,10 +20,10 @@ export default {
     <div class="card border-0 rounded-0 bg-transparent">
       <img src="../assets/vue.svg" style="height: 50px;" class="card-img-top rounded-0" alt="">
       <div class="card-body px-0 text-center">
-        <h5 class="text-white">{{this.title}}</h5>
-        <h5 class="text-white">{{this.original_title}}</h5>
-        <h5 class="text-white">{{this.original_language}}</h5>
-        <h5 class="text-white">{{this.vote_count}}</h5>
+        <h5 class="text-white">{{movieData.title}}</h5>
+        <h6 class="text-white">Titolo Originale: {{movieData.original_title}}</h6>
+        <h6 class="text-white">Lingua Originale: {{movieData.original_language}}</h6>
+        <h6 class="text-white">Voti: {{movieData.vote_count}}</h6>
       </div>
     </div>
     <!-- v-for da inserire in themain.vue -->

@@ -1,5 +1,5 @@
 <script>
-import { store, performSearch } from "../store";
+import { store } from "../store";
 
 export default {
   data() {
