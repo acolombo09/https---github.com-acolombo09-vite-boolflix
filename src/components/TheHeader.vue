@@ -12,25 +12,11 @@ export default {
 </script>
 
 <template>
-  <!-- <header class="bg-black py-3">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col mx-auto">
-          <ul class="nav nav-pills d-flex justify-content-between align-items-center">
-            <li class="nav-item">
-              
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header> -->
-
   <header class="bg-black py-3">
     <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none me-5">
-          <h3 class="text-danger">BOOLFLIX</h3>
+          <h3 class="text-success fw-bold">BOOLFLIX</h3>
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">

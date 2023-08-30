@@ -59,11 +59,6 @@ export default {
 
 main{
   min-height: 390px;
-  // background-color: $color-secondary;
-
-  // img {
-  //   aspect-ratio: 1/1;
-  // }
   .searchbar{
     min-height: 75px;
   }

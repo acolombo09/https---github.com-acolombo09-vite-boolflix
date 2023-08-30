@@ -7,7 +7,7 @@ import { reactive } from "vue";
 export const store = reactive({
   searchQuery: "",
   searchResults: [],
-})
+});
 
 export function searchMedia() {
   const apiKey = "65ff2578e5da8719abf8bf6464f1c406";
@@ -22,4 +22,11 @@ export function searchMedia() {
     .catch(error => {
       console.error(error);
     });
+};
+
+export function getImageUrl() {
+  if(!this.mediaData.poster_path) {
+    return "/placeholder-movie.png";
+  }
+    return "https://image.tmdb.org/t/p/w342" + this.mediaData.poster_path;
 }
