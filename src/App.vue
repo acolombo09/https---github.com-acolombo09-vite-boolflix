@@ -19,7 +19,7 @@ export default {
 
 <template>
   
-  <div class="container-fluid">
+  <div class="container-fluid" style="background-color: #1b1b1b">
     <TheHeader></TheHeader>
     <TheMain></TheMain>
   </div>

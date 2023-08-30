@@ -26,14 +26,14 @@ export default {
 </script>
 
 <template>
-  <main class="bg-dark">
+  <main>
     <div class="container-fluid">
       <!-- Sezione ricerca films -->
       <div class="row searchbar">
         <div class="col mx-auto py-3">
           <ul class="nav nav-pills d-flex justify-content-between align-items-center">
             <li class="nav-item">
-              <h4 class="text-white">MOVIES & TV SERIES</h4>
+              <h4 class="text-white">BOOLFLIX ORIGINALS</h4>
             </li>
             <li class="nav-item">
               <div class="input-group">
@@ -45,7 +45,7 @@ export default {
           </ul>
         </div>
       </div>
-      <div class="row row-cols-4 mx-auto py-3">
+      <div class="row row-cols-6 mx-auto">
         <!-- :mediaData="media" è la prop -->
         <AppCard v-for="media in store.searchResults" :key="media.id" :mediaData="media"></AppCard>
       </div>
@@ -58,7 +58,8 @@ export default {
 @use "../styles/partials/variables" as *;
 
 main{
-  min-height: 390px;
+  min-height: 100vh;
+  background-color: #1b1b1b;
   .searchbar{
     min-height: 75px;
   }

@@ -45,22 +45,24 @@ export default {
 </script>
 
 <template>
-  <div class="col-3 d-flex justify-content-center align-items-center my-3" style="max-height: 450px;">
-    <div class="card border-dark rounded-0 bg-transparent h-100" style="max-width: 300px; max-height: 450px;">
+  <div class="col-2 d-flex justify-content-center align-items-center my-3" style="max-height: 450px;">
+    <div class="card border-dark rounded-0 bg-transparent h-100 card-with-hover" style="max-width: 300px; max-height: 450px;">
       <img :src="getImageUrl()" style="max-height: 342px; aspect-ratio: auto;" class="card-img-top rounded-0 poster-img">
-      <div class="card-body px-0">
+      <div class="card-body px-0 card-hover-content">
         <h5 class="text-white fs-6">{{ mediaData.title || mediaData.name }}</h5>
-        <h6 class="text-white fs-6">Titolo Originale: {{ mediaData.original_title || mediaData.original_name }}</h6>
-        <h6 class="text-white fs-6">Lingua Originale: <lang-flag :iso="mediaData.original_language"/></h6>
+        <h6 class="text-white fs-6">Original Title: {{ mediaData.original_title || mediaData.original_name }}</h6>
+        <h6 class="text-white fs-6">Original Language: <lang-flag :iso="mediaData.original_language"/></h6>
         <!-- <h6 class="text-white">Lingua Originale: {{ mediaData.original_language }}</h6> -->
         <h6 class="text-white fs-6"> 
-          Voto: <star-rating :rating="(mediaData.vote_average / 2)" 
+          Vote: <star-rating :rating="(mediaData.vote_average / 2)" 
           :read-only="true" :increment="0.5" :star-size="18" :max-rating="5" class="d-inline-block ms-1"></star-rating>
           <!-- Prova a fare a mano con icone fontawesome stella piena e vuota per fare in modo che con un v-for
             ci siano N stelline piene dove N è il voto. Il resto sarà stellina vuota fino ad un massimo di 5-->
           <!-- Voto: {{ Math.ceil(mediaData.vote_average / 2) + "/5" }} -->
           <!-- <i class="fa-solid fa-star text-warning"></i> -->
         </h6>
+        <h6 class="text-white fs-6">Overview:</h6>
+        <p class="card-text text-white">{{ mediaData.overview }}</p>
       </div>
     </div>
   </div>
@@ -70,5 +72,25 @@ export default {
 
 @use "../styles/partials/variables" as *;
 
+.card-with-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card-with-hover:hover .card-hover-content {
+  opacity: 1;
+}
 
 </style>
