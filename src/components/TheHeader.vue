@@ -38,10 +38,14 @@ export default {
           <li><a href="#" class="nav-link px-2 link-light">TV Series</a></li>
           <li><a href="#" class="nav-link px-2 link-light">Movies</a></li>
           <li><a href="#" class="nav-link px-2 link-light">Originals</a></li>
-          <li><a href="#" class="nav-link px-2 link-light">Recently Added</a></li>
+          <li><a href="#" class="nav-link px-2 link-light">Recently added</a></li>
           <li><a href="#" class="nav-link px-2 link-light">My list</a></li>
         </ul>
-
+        
+        <ul class="nav col-12 col-lg-auto ms-auto mb-3 mb-lg-0 me-lg-3">
+          <li><a href="#" class="nav-link px-2 link-light"><i class="fa-solid fa-bell text-white"></i></a></li>
+        </ul>
+        
         <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
         </form> -->
@@ -50,11 +54,11 @@ export default {
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
-          <ul class="dropdown-menu text-small">
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          <ul class="dropdown-menu text-small" style="background-color: #263133de;">
+            <li><a class="dropdown-item text-light" href="#">Settings</a></li>
+            <li><a class="dropdown-item text-light" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider border-light"></li>
+            <li><a class="dropdown-item text-light" href="#">Sign out</a></li>
           </ul>
         </div>
       </div>
