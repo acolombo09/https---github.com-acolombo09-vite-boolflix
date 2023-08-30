@@ -54,7 +54,7 @@ export default {
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="../assets/vue.svg" alt="mdo" width="33" height="33" class="">
           </a>
-          <ul class="dropdown-menu text-small" style="background-color: #263133de;">
+          <ul class="dropdown-menu text-small dropdown-menu-dark" aria-labelledby="dropdownMenuDark">
             <li><a class="dropdown-item text-light" href="#">Settings</a></li>
             <li><a class="dropdown-item text-light" href="#">Profile</a></li>
             <li><hr class="dropdown-divider border-light"></li>

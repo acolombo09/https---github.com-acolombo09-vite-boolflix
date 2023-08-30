@@ -10,6 +10,17 @@ export default {
   props: {
   // creare la prop per ricevere i film trovati e stamparli in html nella card
     mediaData: Object,
+    iso: String,
+    squared: Boolean,
+    title: String,
+  },
+  data() {
+    return {
+      rating: null,
+      resetableRating: 2,
+      currentRating: "No Rating",
+      mouseOverRating: null
+    };
   },
   methods: {
     // creazione funzione trova poster e gestione della card senza poster
@@ -18,8 +29,29 @@ export default {
         return "/placeholder-movie.png";
       }
         return "https://image.tmdb.org/t/p/w342" + this.mediaData.poster_path;
+    },
+    showCurrentRating(rating) {
+      this.currentSelectedRating =
+        rating === 0
+          ? this.currentSelectedRating
+          : "Click to select " + rating + " stars";
+    },
+    setCurrentSelectedRating(rating) {
+      this.currentSelectedRating = "You have Selected: " + rating + " stars";
+    },
+  },
+  computed: {
+    currentRatingText() {
+      return this.rating
+        ? "You have selected " + this.rating + " stars"
+        : "No rating selected";
+    },
+    mouseOverRatingText() {
+      return this.mouseOverRating
+        ? "Click to select " + this.mouseOverRating + " stars"
+        : "No Rating";
     }
-  }
+  },
 };
 
 /*
