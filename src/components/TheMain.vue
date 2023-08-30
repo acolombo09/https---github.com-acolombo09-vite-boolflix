@@ -2,7 +2,7 @@
 import axios from "axios";
 import AppCard from "./AppCard.vue";
 // importo solo la variabile store, per questo l'ho messo fuori dal default
-import { store } from "../store";
+import { store, searchMedia } from "../store";
 
 export default {
   props: {
@@ -14,24 +14,10 @@ export default {
   data() {
     return {
       store,
-      searchQuery: "",
-      searchResults: [],
     };
   },
   methods: {
-    searchMedia() {
-      const apiKey = "65ff2578e5da8719abf8bf6464f1c406";
-      const url = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&query=${this.searchQuery}`;
-
-      axios.get(url)
-        .then((response) => {
-          this.searchResults = response.data.results;
-          console.log(this.searchResults);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    },
+    searchMedia,
   },
   mounted() {
     this.searchMedia();
@@ -47,20 +33,21 @@ export default {
         <div class="col mx-auto py-3">
           <ul class="nav nav-pills d-flex justify-content-between align-items-center">
             <li class="nav-item">
-              <h4 class="text-white">MOVIES</h4>
+              <h4 class="text-white">MOVIES & TV SERIES</h4>
             </li>
             <li class="nav-item">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Cerca film..." v-model="searchQuery"/>
+                <input type="text" class="form-control" placeholder="Search here..." v-model="store.searchQuery"/>
                 <button class="btn btn-outline-light" type="button" id="button-addon2"
-                @click="searchMedia">Cerca</button>
+                @click="searchMedia">Search</button>
               </div>
             </li>
           </ul>
         </div>
       </div>
       <div class="row row-cols-4 mx-auto py-3">
-        <AppCard v-for="media in searchResults" :key="media.id" :mediaData="media"></AppCard>
+        <!-- :mediaData="media" è la prop -->
+        <AppCard v-for="media in store.searchResults" :key="media.id" :mediaData="media"></AppCard>
       </div>
     </div>
   </main>

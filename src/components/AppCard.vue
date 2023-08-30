@@ -1,19 +1,16 @@
 <script>
-// import resultsList from "../store";
+import { store } from "../store";
 
 export default {
   props: {
-// creare la prop per ricevere i film trovati e stamparli in html nella card
-  mediaData: Object,
+  // creare la prop per ricevere i film trovati e stamparli in html nella card
+    mediaData: Object,
   },
   data() {
     return {
+      store,
     };
   },
-  methods:{
-
-  },
-  
 };
 </script>
 
