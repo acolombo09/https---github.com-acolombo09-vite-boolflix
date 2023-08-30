@@ -1,6 +1,10 @@
 <script>
+import LangFlag from 'vue-lang-code-flags';
 
 export default {
+  components: {
+    LangFlag,
+  },
   props: {
   // creare la prop per ricevere i film trovati e stamparli in html nella card
     mediaData: Object,
@@ -31,14 +35,15 @@ export default {
 </script>
 
 <template>
-  <div class="col-3 d-flex justify-content-center">
-    <div class="card border-0 rounded-0 bg-transparent h-100" style="max-width: 300px;">
+  <div class="col-3 d-flex justify-content-center align-items-center my-3" style="max-height: 450px;">
+    <div class="card border-dark rounded-0 bg-transparent h-100" style="max-width: 300px; max-height: 450px;">
       <!-- dopo aggiungi " -->
       <img :src="getImageUrl()" style="max-height: 342px; aspect-ratio: auto;" class="card-img-top rounded-0 poster-img">
       <div class="card-body px-0 text-center">
         <h5 class="text-white">{{ mediaData.title || mediaData.name }}</h5>
         <h6 class="text-white">Titolo Originale: {{ mediaData.original_title || mediaData.original_name }}</h6>
-        <h6 class="text-white">Lingua Originale: {{ mediaData.original_language }}</h6>
+        <lang-flag :iso="mediaData.original_language"/>
+        <!-- <h6 class="text-white">Lingua Originale: {{ mediaData.original_language }}</h6> -->
         <h6 class="text-white">
           Voto: {{ Math.ceil(mediaData.vote_average / 2) + "/5" }}
           <i class="fa-solid fa-star text-warning"></i>
