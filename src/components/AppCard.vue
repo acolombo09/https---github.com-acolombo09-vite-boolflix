@@ -1,9 +1,11 @@
 <script>
 import LangFlag from 'vue-lang-code-flags';
+import StarRating from 'vue-star-rating';
 
 export default {
   components: {
     LangFlag,
+    StarRating
   },
   props: {
   // creare la prop per ricevere i film trovati e stamparli in html nella card
@@ -39,14 +41,15 @@ export default {
     <div class="card border-dark rounded-0 bg-transparent h-100" style="max-width: 300px; max-height: 450px;">
       <!-- dopo aggiungi " -->
       <img :src="getImageUrl()" style="max-height: 342px; aspect-ratio: auto;" class="card-img-top rounded-0 poster-img">
-      <div class="card-body px-0 text-center">
+      <div class="card-body px-0">
         <h5 class="text-white">{{ mediaData.title || mediaData.name }}</h5>
         <h6 class="text-white">Titolo Originale: {{ mediaData.original_title || mediaData.original_name }}</h6>
-        <lang-flag :iso="mediaData.original_language"/>
+        <h6 class="text-white">Lingua Originale: <lang-flag :iso="mediaData.original_language"/></h6>
         <!-- <h6 class="text-white">Lingua Originale: {{ mediaData.original_language }}</h6> -->
-        <h6 class="text-white">
-          Voto: {{ Math.ceil(mediaData.vote_average / 2) + "/5" }}
-          <i class="fa-solid fa-star text-warning"></i>
+        <h6 class="text-white"> 
+          Voto: <star-rating :rating="mediaData.vote_average" :read-only="true" :increment="0.01" :star-size="18" class="d-inline-block ms-1"></star-rating>
+          <!-- Voto: {{ Math.ceil(mediaData.vote_average / 2) + "/5" }} -->
+          <!-- <i class="fa-solid fa-star text-warning"></i> -->
         </h6>
       </div>
     </div>
