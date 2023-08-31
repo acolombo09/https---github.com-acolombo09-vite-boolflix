@@ -45,7 +45,7 @@ export default {
               <button class="btn btn-outline-light" type="button" id="button-addon2"
               @click="searchMedia">Search</button>
             </div>
-            <ul class="nav align-items-center">
+            <ul class="nav align-items-center me-2">
               <li><a href="#" class="nav-link px-2 link-light"><i class="fa-solid fa-bell text-white fs-5"></i></a></li>
             </ul>
           </div>
