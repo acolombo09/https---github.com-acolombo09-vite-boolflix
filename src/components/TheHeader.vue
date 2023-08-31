@@ -1,18 +1,28 @@
 <script>
-import { store } from "../store";
+import axios from "axios";
+import { store, searchMedia } from "../store";
 
 export default {
+  props: {
+    mediaData: Object,
+  },
   data() {
     return {
       store,
     };
+  },
+  methods: {
+    searchMedia,
+  },
+  mounted() {
+    this.searchMedia();
   },
 };
 
 </script>
 
 <template>
-  <header class="bg-black py-3">
+  <header class="py-3">
     <div class="container-fluid">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none me-5">
@@ -28,13 +38,18 @@ export default {
           <li><a href="#" class="nav-link px-2 link-light">My list</a></li>
         </ul>
         
-        <ul class="nav col-12 col-lg-auto ms-auto mb-3 mb-lg-0 me-lg-2 align-items-center">
-          <li><a href="#" class="nav-link px-2 link-light"><i class="fa-solid fa-bell text-white fs-5"></i></a></li>
-        </ul>
-        
-        <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form> -->
+        <div class="col-12 col-lg-auto ms-lg-auto mb-3 mb-lg-0">
+          <div class="d-flex align-items-center">
+            <div class="input-group input-group-sm me-2">
+              <input type="text" class="form-control" placeholder="Search here..." v-model="store.searchQuery"/>
+              <button class="btn btn-outline-light" type="button" id="button-addon2"
+              @click="searchMedia">Search</button>
+            </div>
+            <ul class="nav align-items-center">
+              <li><a href="#" class="nav-link px-2 link-light"><i class="fa-solid fa-bell text-white fs-5"></i></a></li>
+            </ul>
+          </div>
+        </div>
 
         <div class="dropdown text-end d-flex justify-content-center align-items-center">
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle text-light" data-bs-toggle="dropdown" aria-expanded="false">

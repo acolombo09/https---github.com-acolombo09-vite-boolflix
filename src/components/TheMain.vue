@@ -2,7 +2,7 @@
 import axios from "axios";
 import AppCard from "./AppCard.vue";
 // importo solo la variabile store, per questo l'ho messo fuori dal default
-import { store, searchMedia } from "../store";
+import { store } from "../store";
 
 export default {
   props: {
@@ -16,12 +16,6 @@ export default {
       store,
     };
   },
-  methods: {
-    searchMedia,
-  },
-  mounted() {
-    this.searchMedia();
-  }
 };
 </script>
 
@@ -30,22 +24,15 @@ export default {
     <div class="container-fluid">
       <!-- Sezione ricerca films -->
       <div class="row searchbar">
-        <div class="col mx-auto py-3">
+        <div class="col mx-auto pt-2">
           <ul class="nav nav-pills d-flex justify-content-between align-items-center">
             <li class="nav-item">
-              <h4 class="text-white">BOOLFLIX ORIGINALS</h4>
-            </li>
-            <li class="nav-item">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search here..." v-model="store.searchQuery"/>
-                <button class="btn btn-outline-light" type="button" id="button-addon2"
-                @click="searchMedia">Search</button>
-              </div>
+              <h4 class="text-white my-0">BOOLFLIX ORIGINALS</h4>
             </li>
           </ul>
         </div>
       </div>
-      <div class="row row-cols-6 mx-auto">
+      <div class="row row-cols-6">
         <!-- :mediaData="media" è la prop -->
         <AppCard v-for="media in store.searchResults" :key="media.id" :mediaData="media"></AppCard>
       </div>
@@ -61,7 +48,7 @@ main{
   min-height: 100vh;
   background-color: #1b1b1b;
   .searchbar{
-    min-height: 75px;
+    min-height: 60px;
   }
 }
 

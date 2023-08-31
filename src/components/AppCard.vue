@@ -45,7 +45,7 @@ export default {
 </script>
 
 <template>
-  <div class="col-2 d-flex justify-content-center align-items-center my-3" style="max-height: 450px;">
+  <div class="col-2 d-flex justify-content-center align-items-center mb-5" style="max-height: 450px;">
     <div class="card border-dark rounded-0 bg-transparent h-100 card-with-hover" style="max-width: 300px; max-height: 450px;">
       <img :src="getImageUrl()" style="max-height: 342px; aspect-ratio: auto;" class="card-img-top rounded-0 poster-img">
       <div class="card-body px-0 card-hover-content">
