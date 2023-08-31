@@ -24,7 +24,7 @@ export default {
     <div class="container-fluid">
       <!-- Sezione ricerca films -->
       <div class="row searchbar">
-        <div class="col mx-auto pt-2">
+        <div class="col mx-2 pt-2">
           <ul class="nav nav-pills d-flex justify-content-between align-items-center">
             <li class="nav-item">
               <h4 class="text-white my-0">BOOLFLIX ORIGINALS</h4>
